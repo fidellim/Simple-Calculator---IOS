@@ -41,15 +41,18 @@ class ViewController: UIViewController {
         
     }
     
+    //When operations are pressed
     @IBAction func operations(_ sender: UIButton) {
         
         if sender.tag == 11{ //cancel
+            
+            //set variables to zero
             myLabel.text = "0";
             previousNumber = 0;
             currentNumber = 0;
             operation = 0;
         }
-        else if sender.tag != 11 && sender.tag != 16 {
+        else if sender.tag != 11 && sender.tag != 16 { //if it is neither cancel or equals
             previousNumber = Double(myLabel.text!)!
             
             if sender.tag == 12{ //addition
@@ -72,19 +75,19 @@ class ViewController: UIViewController {
             
             var outputValue:Double = 0.0;
             
-            if operation == 12 {
+            if operation == 12 { //add two numbers
                 
                 outputValue = calc.add(previousNumber: previousNumber, currentNumber: currentNumber)
                 
-            }else if operation == 13{
+            }else if operation == 13{ //subtract two numbers
                 
                 outputValue = calc.subtract(previousNumber: previousNumber, currentNumber: currentNumber)
                 
-            }else if operation == 14{
+            }else if operation == 14{ //multiply two numbers
                 
                 outputValue = calc.multiply(previousNumber: previousNumber, currentNumber: currentNumber)
                 
-            }else if operation == 15{
+            }else if operation == 15{ //divide two numbers
                 
                 outputValue = calc.divide(previousNumber: previousNumber, currentNumber: currentNumber)
                 
